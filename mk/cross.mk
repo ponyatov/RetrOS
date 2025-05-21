@@ -1,5 +1,5 @@
-HW ?= pc
-# HW ?= qemu386
+# HW ?= pc
+HW ?= qemu386
 
 include   hw/$(HW)/$(HW).mk
 include  cpu/$(CPU)/$(CPU).mk

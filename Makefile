@@ -3,6 +3,7 @@ include mk/version.mk
 include mk/dir.mk
 include mk/tool.mk
 include mk/cross.mk
+include mk/src.mk
 include mk/all.mk
 include mk/format.mk
 include mk/rule.mk
