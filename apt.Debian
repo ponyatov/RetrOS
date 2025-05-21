@@ -1,0 +1,4 @@
+git make curl
+code meld doxygen clang-format
+cmake gcc gdb gdb-multiarch
+flex bison ragel lemon libreadline-dev

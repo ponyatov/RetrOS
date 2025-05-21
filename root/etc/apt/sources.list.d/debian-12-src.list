@@ -1,0 +1,2 @@
+deb-src http://mirror.mephi.ru/debian/ bookworm main contrib non-free non-free-firmware
+deb-src http://mirror.mephi.ru/debian/ bookworm-backports main contrib non-free non-free-firmware
