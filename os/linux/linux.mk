@@ -9,7 +9,9 @@ GZ += ref/busybox-$(BB_VER)/README
 ref/busybox-$(BB_VER)/README:
 	cd ref ; apt source busybox
 
-cd ref ; apt source linux-source
+GZ += ref/linux-$(LINUX_VER)/README
+ref/linux-$(LINUX_VER)/README:
+	cd ref ; apt source linux-source
 endif
 
 LINUX_CFG += $(CWD)/hw/all.linux
