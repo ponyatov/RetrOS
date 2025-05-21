@@ -1,5 +1,6 @@
 {
     "recommendations": [
+        "kingleo.deepseek-web",
         "stkb.rewrap",
         // "ryuta46.multi-command",
         "ms-vscode.makefile-tools",
