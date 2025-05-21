@@ -1,0 +1,9 @@
+mk/var.mk
+mk/version.mk
+mk/dir.mk
+mk/tool.mk
+mk/all.mk
+mk/format.mk
+mk/rule.mk
+mk/doc.mk
+mk/install.mk
