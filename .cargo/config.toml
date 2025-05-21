@@ -2,3 +2,10 @@
 # runner = "echo"
 [target.i486-pc-linux-uclibc]
 runner = "qemu-system-i386 -m 1M -machine pc -cpu 486 -nographic -gdb tcp::12345 -kernel"
+
+[unstable]
+build-std = ["core", "alloc", "compiler_builtins"]
+build-std-features = ["compiler-builtins-mem"]
+
+[build]
+# target = ".cargo/i486-pc-linux-uclibc.json"
