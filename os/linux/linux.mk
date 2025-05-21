@@ -9,17 +9,27 @@ GZ += ref/busybox-$(BB_VER)/README
 ref/busybox-$(BB_VER)/README:
 	cd ref ; apt source busybox
 
-GZ += ref/linux-$(LINUX_VER)/README
-ref/linux-$(LINUX_VER)/README:
-	cd ref ; apt source linux-source
+LINUX_MK = ref/linux-$(LINUX_VER)/Makefile
+GZ += $(LINUX_MK)
+$(LINUX_MK):
+	cd ref ; apt source linux
 endif
 
-LINUX_CFG += $(CWD)/hw/all.linux
-LINUX_CFG += $(CWD)/arch/$(ARCH)/$(ARCH).linux
-LINUX_CFG += $(CWD)/cpu/$(CPU)/$(CPU).linux
-LINUX_CFG += $(CWD)/hw/$(HW)/$(HW).linux
+LINUX_CFG += hw/all.linux
+LINUX_CFG += arch/$(ARCH)/$(ARCH).linux
+LINUX_CFG += cpu/$(CPU)/$(CPU).linux
+LINUX_CFG += hw/$(HW)/$(HW).linux
 
-LINUX_MK = ref/linux-source-$(LINUX_VER)/Makefile
+LINUX_MAKE  = $(MAKE) -f $(LINUX_MK)
+LINUX_MAKE += ARCH=$(ARCH) CROSS_COMPILE=$(LINUX_TARGET)-
+LINUX_MAKE += INSTALL_PATH=$(BOOT)
+LINUX_MAKE += INSTALL_MOD_PATH=$(ROOT)
+LINUX_MAKE += INSTALL_HDR_PATH=$(ROOT)/usr
+LINUX_MAKE += INSTALL_DTBS_PATH=$(ROOT)/dtbs
 
 .PHONY: linux
-linux: tmp/kernel/.config $(LINUX_MK)
+linux: tmp/linux/.config $(LINUX_MK)
+
+tmp/linux/.config: $(LINUX_CFG) mk/cross.mk os/linux/linux.mk
+	mkdir -p tmp/linux ; cd tmp/linux ;\
+	rm -f .config 

@@ -23,6 +23,13 @@
             "problemMatcher" : []
         },
         {
+            "label"          : "cross: linux",
+            "type"           : "shell",
+            "command"        : "make linux",
+            "presentation"   : {"focus": true},
+            "problemMatcher" : []
+        },
+        {
             "label"          :  "cargo: qemu386",
             "type"           :  "shell",
             "command"        :  "cargo",
