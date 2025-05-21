@@ -26,7 +26,7 @@
             "label"          :  "cargo: qemu386",
             "type"           :  "shell",
             "command"        :  "cargo",
-            "args"           : ["run", "--features","qemu386","--target", "i486-pc-linux"],
+            "args"           : ["run", "--features","qemu386","--target", "i486-pc-linux-uclibc"],
             "options"        : {"cwd": "${workspaceFolder}"},
             "problemMatcher" : ["$rustc"],
             "presentation"   : {"showReuseMessage": false, "focus": true, "reveal": "silent"},

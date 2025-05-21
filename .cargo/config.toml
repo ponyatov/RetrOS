@@ -1,0 +1,4 @@
+[target.x86_64-unknown-linux-gnu]
+# runner = "echo"
+[target.i486-pc-linux-uclibc]
+runner = "qemu-system-i386 -m 1M -machine pc -cpu 486 -nographic -gdb tcp::12345 -kernel"
